@@ -26,7 +26,7 @@ namespace CrearLeerXML
 
         }
 
-        private void btSerializar_Click(object sender, EventArgs e)
+        private void btGuardar_Click(object sender, EventArgs e)
         {
             XmlSerializer xs = new XmlSerializer(typeof(Agenda));
             FileStream fsout;
@@ -72,6 +72,29 @@ namespace CrearLeerXML
             } 
             catch 
             { 
+            }
+        }
+
+        private void btMostrar_Click(object sender, EventArgs e)
+        {
+            Contacto contacto = new Contacto();
+            XmlSerializer xs = new XmlSerializer(typeof(Agenda));
+            FileStream fsin = new FileStream("agenda.xml", FileMode.Open, FileAccess.Read, FileShare.None);
+            try
+            {
+                using (fsin)
+                {
+                    agenda = (Agenda)xs.Deserialize(fsin);
+                    contacto = (Contacto)agenda.Contactos[contador];
+                    tbNombre.Text = contacto.nombre;
+                    tbApellidos.Text = contacto.apellidos;
+                    tbDireccion.Text = contacto.direccion;
+                    tbTelef.Text = contacto.telefono;
+                    tbEmail.Text = contacto.email;
+                }
+            }
+            catch
+            {
             }
         }
 

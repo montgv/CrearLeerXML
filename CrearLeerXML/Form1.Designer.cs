@@ -42,6 +42,7 @@
             this.btIzquierda = new System.Windows.Forms.Button();
             this.btDerecha = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.btMostrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbAgenda
@@ -159,13 +160,24 @@
             // btGuardar
             // 
             this.btGuardar.BackColor = System.Drawing.SystemColors.Window;
-            this.btGuardar.Location = new System.Drawing.Point(154, 318);
+            this.btGuardar.Location = new System.Drawing.Point(48, 329);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(122, 32);
             this.btGuardar.TabIndex = 13;
             this.btGuardar.Text = "GUARDAR";
             this.btGuardar.UseVisualStyleBackColor = false;
-            this.btGuardar.Click += new System.EventHandler(this.btSerializar_Click);
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
+            // 
+            // btMostrar
+            // 
+            this.btMostrar.BackColor = System.Drawing.SystemColors.Window;
+            this.btMostrar.Location = new System.Drawing.Point(295, 329);
+            this.btMostrar.Name = "btMostrar";
+            this.btMostrar.Size = new System.Drawing.Size(108, 32);
+            this.btMostrar.TabIndex = 14;
+            this.btMostrar.Text = "MOSTRAR";
+            this.btMostrar.UseVisualStyleBackColor = false;
+            this.btMostrar.Click += new System.EventHandler(this.btMostrar_Click);
             // 
             // Form1
             // 
@@ -173,6 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(456, 399);
+            this.Controls.Add(this.btMostrar);
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.btDerecha);
             this.Controls.Add(this.btIzquierda);
@@ -211,6 +224,7 @@
         private System.Windows.Forms.Button btIzquierda;
         private System.Windows.Forms.Button btDerecha;
         private System.Windows.Forms.Button btGuardar;
+        private System.Windows.Forms.Button btMostrar;
     }
 }
 
